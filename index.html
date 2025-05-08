@@ -25,10 +25,6 @@
       font-style: normal;
     }
 
-    /* Example usage */
-    body {
-      font-family: 'Glacial Indifference', sans-serif;
-    }
 
 
     /*BACKGROUND*/
@@ -41,65 +37,55 @@
     }
 
     .content {
-      background-color: white;
       width: 100%;
-      max-width: 800px;
+      max-width: 1920px;
       min-height: 100vh;
       max-height: 100vh;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 200px;
-    }
 
-    .headerText {
-      position: absolute;
-      top: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 58px;
-      color: salmon;
-      font-family: Tahoma;
-      font-weight: bold;
-      text-align: center;
-    }
+      background:
+        linear-gradient(to bottom,
+          rgba(237, 236, 233, 0.582),
+          rgba(203, 77, 122, 0.822)),
 
-    .subheaderText {
-      position: absolute;
-      top: 120px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 15px;
-      color: black;
-      font-family: Tahoma;
-      font-weight: bolder;
-      text-align: center;
+        url("../navigay/Images/school_bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
     }
 
     /*CARDS*/
 
     .scrollableSection {
       overflow-y: auto;
-      max-height: 800px;
-      width: 85%;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 40px;
+
+      padding-top: 20px;
+    }
+
+    .scrollableSection::-webkit-scrollbar {
+      display: none;
     }
 
     .buttonCard {
       width: 90%;
       max-width: 500px;
-      background-color: #e69597;
-      color: white;
-      border: none;
+      background-color: #fef9e5;
+      color: #8a004f;
+      border: 1px solid #2d9900;
       border-radius: 10px;
       padding: 15px 20px;
       margin: 10px 0;
+      margin-left: 25px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       display: flex;
@@ -109,12 +95,18 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
+    .buttonCard:hover {
+      transform: scale(1.01);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
     .buttonCard img {
-      width: 140px;
-      height: 140px;
+      width: 110px;
+      height: 110px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-right: 15px;
+      border-radius: 12px;
+      margin-right: 20px;
+      border: 2px solid #a8d58d;
     }
 
     .textContent {
@@ -122,118 +114,29 @@
       flex-direction: column;
     }
 
-    .buttonCard:hover {
-      background-color: darksalmon;
-    }
-
     .placeName {
       font-size: 18px;
       font-weight: bold;
-      margin-bottom: 5px;
-      font-family: Tahoma;
+      font-family: 'Glacial Indifference';
+      color: #a1004f;
+      margin-bottom: 8px;
     }
 
     .placeDescription {
       font-size: 14px;
-      font-family: Tahoma;
-      opacity: 0.9;
+      font-family: 'Glacial Indifference';
+      color: #6c0042;
+      opacity: 0.85;
     }
+
 
     #map {
       width: 90%;
       max-width: 700px;
       height: 400px;
       margin: 20px 0;
-      border: 2px solid salmon;
+      border: 2px;
       border-radius: 10px;
-    }
-
-    /*POP UP*/
-
-    #policyPopUpModal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px 0;
-    }
-
-
-    /* Modal content box */
-    .popUpModal-content {
-      background-color: white;
-      border: 3px solid red;
-      border-radius: 15px;
-      padding: 30px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-      font-family: Tahoma, sans-serif;
-      max-height: 90vh;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Slide layout */
-    .popUpModal-slide {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .popUpModal-slide.active {
-      display: flex;
-    }
-
-    /* Titles and text */
-    .popUpModal-title {
-      font-size: 28px;
-      color: salmon;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .popUpModal-body {
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .popUpModal-subbody {
-      font-size: 14px;
-      color: #666;
-    }
-
-    .popUpModal-list {
-      text-align: left;
-      font-size: 14px;
-      color: #666;
-      padding-left: 20px;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    /* Buttons */
-    .popUpModal-button {
-      margin-top: 20px;
-      background-color: salmon;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .popUpModal-button:hover {
-      background-color: darksalmon;
     }
 
     /* MAP */
@@ -242,13 +145,18 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 108vw;
-      height: 78vh;
+      width: 90vw;
+      height: 70vh;
       max-width: 600px;
+      max-height: 80vh;
       z-index: 1000;
       display: flex;
       flex-direction: column;
       border-radius: 12px;
+      overflow: hidden;
+      border: none;
+      box-shadow: none;
+      background-color: transparent;
     }
 
     .map-popup.hidden {
@@ -262,55 +170,94 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 12px;
+      overflow: hidden;
     }
 
     #map {
       width: 100%;
       height: 100%;
+      border-radius: 10px;
     }
 
     .map-toggle-btn {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
+      bottom: clamp(10px, 5vw, 20px);
+      right: clamp(10px, 5vw, 20px);
+      width: clamp(40px, 12vw, 50px);
+      height: clamp(40px, 12vw, 50px);
       z-index: 1100;
       cursor: pointer;
       border-radius: 50%;
-      object-fit: cover;
+      background-color: #4CAF50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Dropdowns */
+    .map-toggle-btn::before {
+      content: '\1F5FA';
+      font-size: 24px;
+      color: white;
+    }
+
+    .map-toggle-btn.highlight {
+      background-color: #ffcc00;
+      border: 2px solid #ff9900;
+      box-shadow: 0 2px 8px rgba(255, 165, 0, 0.6);
+      transform: scale(1.7);
+      transition: all 0.3s ease;
+    }
+
+    @media screen and (max-width: 600px) {
+      .map-popup {
+        width: 95vw;
+        height: 65vh;
+        border-radius: 10px;
+      }
+
+      #map {
+        border-radius: 8px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .map-popup {
+        width: 98vw;
+        height: 60vh;
+        border-radius: 8px;
+      }
+    }
+
+    /*Hospital Infos*/
+
     .info-popup {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 90vw;
+      width: 90%;
       max-width: 500px;
       background-color: #fef9e5;
-      border-radius: 32px;
-      padding: 20px;
+      border-radius: 20px;
+      padding: 15px;
       z-index: 2000;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       overflow-y: auto;
-      /* Keeps scrolling functionality */
-      max-height: 90vh;
+      max-height: 85vh;
       border: 1px solid #2d9900;
       scrollbar-width: none;
-      /* Hides scrollbar in Firefox */
       -ms-overflow-style: none;
-      /* Hides scrollbar in Internet Explorer and Edge */
+
+      opacity: 1;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .info-popup::-webkit-scrollbar {
-      /* Hides scrollbar in Webkit browsers (Chrome, Safari, etc.) */
       display: none;
     }
 
-    /* Ensure the close button is above everything else */
     .close-btn {
       position: absolute;
       top: 10px;
@@ -319,117 +266,216 @@
       color: white;
       border: none;
       border-radius: 50%;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       z-index: 3000;
-      /* Ensures the close button is above the popup content */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .info-popup.hidden {
-      display: none;
+      opacity: 0;
+      transform: translate(-50%, -45%);
+      pointer-events: none;
+      display: block !important;
     }
 
     .info-header {
-      padding-top: 15px;
+      padding-top: 10px;
       text-align: center;
     }
 
-    /* Fixed image container */
     .welcome-image-container {
-      width: 100%;
-      height: 180px;
+      width: calc(100% + 30px);
+      height: auto;
+      max-height: 160px;
       overflow: hidden;
-      border-radius: 32px 32px 0 0;
-      margin: -20px -20px 0 -20px;
-      /* Negative margin to counteract the padding */
-      width: calc(100% + 40px);
-      /* Increase width to account for the padding */
+      border-radius: 20px 20px 0 0;
+      margin: -15px -15px 0 -15px;
       position: relative;
     }
 
-    /* Image styling */
     .popup-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      /* Removes any inline spacing */
     }
 
     .hospital-title {
-      font-size: 32px;
+      font-size: clamp(22px, 5vw, 32px);
       font-weight: bold;
       color: #b81e63;
+      margin-top: 10px;
+      margin-bottom: 5px;
     }
 
     .about-section {
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     .about-title {
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       color: #b81e63;
     }
 
     .about-description {
       background-color: transparent;
       color: #b81e63;
-      padding: 12px;
-      border-radius: 32px;
+      padding: 10px;
+      border-radius: 20px;
+      font-size: clamp(14px, 3.5vw, 16px);
     }
 
     .services-section {
-      margin-top: 20px;
-    }
-
-    .hospital-title {
-      font-family: 'Glacial Indifference', sans-serif;
-      font-size: 28px;
+      margin-top: 15px;
     }
 
     .about-title,
     .services-title {
-      font-size: 20px;
+      font-size: clamp(16px, 4.5vw, 20px);
       font-family: 'Glacial Indifference', sans-serif;
       font-style: italic;
       font-weight: bold;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .service-btn {
       background-color: #cb4d7a;
       color: white;
       border: none;
-      padding: 10px;
+      padding: 8px 12px;
       width: 100%;
       text-align: left;
       font-weight: bold;
-      margin-bottom: 10px;
-      /* Extra space for dropdown */
-      border-radius: 32px;
+      margin-bottom: 0;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
-      /* Places arrow on the right */
       align-items: center;
+      font-size: clamp(14px, 3.5vw, 16px);
+      transition: background-color 0.3s ease;
+      border-radius: 20px;
+    }
+
+    .service-btn.active {
+      background-color: rgb(48, 158, 48);
+      border-radius: 20px 20px 0 0;
     }
 
     .arrow {
-      font-size: 14px;
+      font-size: 12px;
+      transition: transform 0.3s ease;
     }
 
     .service-description {
-      padding: 10px;
       background-color: rgb(48, 158, 48);
       color: white;
-      border-radius: 32px;
-      display: none;
-      margin-bottom: 10px;
-      transition: all 0.3s ease-in-out;
+      padding: 0;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 8px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+      font-size: clamp(13px, 3.5vw, 15px);
+    }
+
+    .service-description.active {
+      max-height: 2000px;
+      opacity: 1;
+      padding: 8px 10px;
+      overflow-y: auto;
+    }
+
+    .service-description ul {
+      margin: 0.5em 0;
+      padding-left: 2em;
+    }
+
+    .service-description li {
+      margin-bottom: 0.25em;
+    }
+
+    .service-description p {
+      margin: 0.75em 0;
+    }
+
+    .service-description strong {
+      display: inline-block;
+      margin-top: 0.75em;
+    }
+
+    .service-description p strong {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    /* Service group container to keep button and description together */
+    .service-group {
+      margin-bottom: 8px;
+    }
+
+    .service-group:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Media queries for different screen sizes */
+    @media screen and (max-width: 480px) {
+      .info-popup {
+        width: 95%;
+        padding: 12px;
+        border-radius: 15px;
+        max-height: 80vh;
+      }
+
+      .welcome-image-container {
+        width: calc(100% + 24px);
+        max-height: 120px;
+        margin: -12px -12px 0 -12px;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .close-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+        top: 8px;
+        right: 10px;
+      }
+
+      .service-btn {
+        padding: 6px 10px;
+      }
+
+      .service-description.active {
+        padding: 6px 10px;
+      }
+
+      .service-group {
+        margin-bottom: 6px;
+      }
+    }
+
+    /* For very small screens */
+    @media screen and (max-width: 320px) {
+      .info-popup {
+        width: 98%;
+        padding: 10px;
+        border-radius: 12px;
+      }
+
+      .welcome-image-container {
+        width: calc(100% + 20px);
+        max-height: 100px;
+        margin: -10px -10px 0 -10px;
+        border-radius: 12px 12px 0 0;
+      }
     }
   </style>
 </head>
@@ -442,30 +488,24 @@
 
     <img src="https://icon-library.com/images/map-icon-png/map-icon-png-29.jpg" alt="Toggle Map" class="map-toggle-btn"
       onclick="toggleMapPopup()">
-    <div class="headerText">navigait</div>
-    <div class="subheaderText">WVSU-CON LEVEL 2 AFFLIATED HOSPITALS</div>
 
     <div class="scrollableSection">
       <button class="buttonCard" onclick="showMap(0); showHospitalInfo(0);">
-        <img
-          src="https://scontent.fceb1-3.fna.fbcdn.net/v/t39.30808-6/476120210_1111075137480327_3687622532405173658_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeF6yKbJzCwZpn3DMJm7a73k_cfbUivaHsP9x9tSK9oew9Qd18L7gYucB_vv6Df1jIHVueGPR85en8K83ogyjFsp&_nc_ohc=wMc5ybUyl48Q7kNvwFfu2p_&_nc_oc=AdlazzadSW0n86tBIgAeC-aY4PKgCWSVmVBf7wC3dJCNi7wgi4vU7_pjKi5V0cQgo12M73PgxuXz9kEYOudER1qu&_nc_zt=23&_nc_ht=scontent.fceb1-3.fna&_nc_gid=yLuoVCCIc3uLeiOPWRZDYA&oh=00_AfFsyNJQEK86bBfLG1p2geTdkXiirdTmC8p8lu56t2plTw&oe=68099406"
-          alt="Hospital Image">
+        <img src="../navigay/Images/DoneJose.jpg" alt="Hospital Image">
         <div class="textContent">
           <div class="placeName">DON JOSE S. MONFORT MEDICAL CENTER</div>
           <div class="placeDescription">A government hospital in Barotac Nuevo, Iloilo offering secondary healthcare
             services with emergency, surgical, and outpatient care.</div>
-          </divd>
+        </div>
       </button>
 
       <button class="buttonCard" onclick="showMap(1); showHospitalInfo(1);">
-        <img
-          src="https://scontent.fceb1-4.fna.fbcdn.net/v/t39.30808-6/367743240_6818023618242422_6605257610426573057_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=e_Wms9nzm9YQ7kNvwGJLnqb&_nc_oc=AdmTTMqgTkHEBYJSrvReQ9_Dyq5elB-KhB5DatFK0VamRG2e7Nm2bo6_WxwOeqOiyK5Wq6Urgw8ctWrMXK9J-Xv2&_nc_zt=23&_nc_ht=scontent.fceb1-4.fna&_nc_gid=wtxz6a_66XDjDX8MUIL1Eg&oh=00_AfFRI8RkU1oRKWkXtQm3fqc5kpUEEHgG6iznMtvlSVniYg&oe=6809759C"
-          alt="Hospital Image">
+        <img src="../navigay/Images/RamonD.jpg" alt="Hospital Image">
         <div class="textContent">
           <div class="placeName">RAMON D. DUREMDES DISCTRICT HOSPITAL</div>
           <div class="placeDescription">Located in Dumangas, Iloilo, this district hospital provides basic medical,
             surgical, and maternity services to sorrounding communities.</div>
-          </divd>
+        </div>
       </button>
 
       <button class="buttonCard" onclick="showMap(2); showHospitalInfo(2);">
@@ -483,7 +523,7 @@
           src="https://dailyguardian.com.ph/wp-content/uploads/2023/10/West-Visayas-State-University-Medical-Center.jpg"
           alt="Hospital Image">
         <div class="textContent">
-          <div class="placeName">WESTERN VISAYAS STATE UNVERSITY MEDICAL CENTER</div>
+          <div class="placeName">WEST VISAYAS STATE UNVERSITY MEDICAL CENTER</div>
           <div class="placeDescription">Located in Jaro, Iloilo City, WVSUMC is a tertiary-level teaching hospital
             providing comprehensive medical services and serves as a training ground for medical and allied health
             students.</div>
@@ -497,7 +537,7 @@
           <div class="placeName">ALEOSAN DISTRICT HOSPITAL</div>
           <div class="placeDescription">Situated in Barangay Bancal, Alimodian, Aleosan District Hospital serves with
             general surgery, OB-Gyne, pediatrics, and diagnostic services. </div>
-          </divd>
+        </div>
       </button>
 
       <button class="buttonCard" onclick="showMap(5); showHospitalInfo(5);">
@@ -507,7 +547,7 @@
           <div class="placeName">REP. PEDRO G. TRONO MEMORIAL HOSPITAL</div>
           <div class="placeDescription">A district hospital in Guimbal, Iloilo providing essential healthcare services
             including pediatrics, OB-GYN, and emergency care.</div>
-          </divd>
+        </div>
       </button>
 
       <button class="buttonCard" onclick="showMap(6); showHospitalInfo(6);">
@@ -520,165 +560,59 @@
         </div>
       </button>
 
-      <button class="buttonCard" onclick="showMap(6); showHospitalInfo(6);">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrcQSMAfjeWXlf14ZJSqod8jsmY3na29Y-ng&s"
+      <button class="buttonCard" onclick="showMap(7); showHospitalInfo(7);">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg2K_UNRZcJy5tejgduO2_NO5QhkeLmReoWA&s"
           alt="Hospital Image">
         <div class="textContent">
           <div class="placeName">FEDERICO ROMAN TIRADOR SR. MEMORIAL DISTRICT HOSPITAL</div>
-          <div class="placeDescription">A public hospital providing accessible, quality healthcare and a wide range of
-            medical services to the local community.</div>
+          <div class="placeDescription">a local government-run healthcare facility located in Janiuay, Iloilo, serving
+            the medical needs of the surrounding communities in Western Visayas.</div>
+        </div>
+      </button>
+
+      <button class="buttonCard" onclick="showMap(8); showHospitalInfo(8);">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuk0EYLzfAvBJCCwnvddDCNY2BxLd27N9h6g&s"
+          alt="Hospital Image">
+        <div class="textContent">
+          <div class="placeName">FAMILY PLANNING ORGANIZATION OF THE PHILIPPINES (FPOP)</div>
+          <div class="placeDescription">PLACEHOLDER</div>
         </div>
       </button>
 
     </div>
 
-    <div class="info-popup hidden" id="infoPopup">
-      <button class="close-btn" onclick="closeInfoPopup()">✕</button>
-   
-      <!-- Image directly at the top of the popup -->
+    <div id="infoPopup" class="info-popup hidden">
+      <button class="close-btn" onclick="closeInfoPopup()">&times;</button>
+
       <div class="welcome-image-container">
-        <img class="popup-image" alt="Hospital Banner" />
-        <!-- No need to set src here, it will be dynamically updated -->
+        <img src="hospital-image.jpg" alt="Hospital Image" class="popup-image">
       </div>
-   
+
       <div class="info-header">
-        <div class="hospital-title" id="popupHospitalName" style="color: #b81e63;">Hospital Name</div>
+        <h2 id="popupHospitalName" class="hospital-title">Hospital Name</h2>
       </div>
-   
+
       <div class="about-section">
-        <div class="about-title">About It</div>
-        <div class="about-description" id="popupHospitalDesc">Description of the hospital</div>
+        <div class="about-title">About</div>
+        <div id="popupHospitalDesc" class="about-description">
+          Hospital description
+        </div>
       </div>
-   
+
       <div class="services-section">
-        <div class="services-title" style="color: #b81e63;">SERVICE OFFERED:</div>
+        <div class="services-title" style="color: #b81e63;">SERVICES OFFERED:</div>
         <div id="servicesList">
-          <!-- Dynamically filled with buttons -->
-        </div>
-      </div>
-    </div>
 
-    <div id="policyPopUpModal">
-      <div class="popUpModal-content">
-        <div class="popUpModal-slide active">
-          <div class="popUpModal-title">Welcome to Navigait</div>
-          <div class="popUpModal-body">Welcome to NaviGait! By accessing or using our website and services, you agree to
-            the
-            following Terms of Use.</div>
-          <div class="popUpModal-subbody">Please read them carefully.</div>
-          <button class="popUpModal-button" onclick="nextSlide()">Next</button>
-        </div>
-
-        <div class="popUpModal-slide">
-          <div class="popUpModal-title">Terms of Use</div>
-          <div class="popUpModal-body">Description of Service</div>
-          <div class="popUpModal-subbody">NaviGait provides clinical navigation and scheduling support for nursing
-            students,
-            particularly those undergoing Maternal and Child Health Nursing (MCN) rotations. Features may include
-            interactive hospital maps, shift alerts, personal profiles, and reminders.</div>
-          <br>
-          <div class="popUpModal-body">User Eligibility</div>
-          <div class="popUpModal-subbody">You must be a registered nursing student or an authorized educational partner
-            to
-            use this platform. By using NaviGait, you confirm that you are at least 18 years old or have obtained
-            necessary institutional permissions.</div>
-          <br>
-          <div class="popUpModal-body">Account Responsibilities</div>
-          <div class="popUpModal-subbody">Users are responsible for maintaining the confidentiality of their login
-            credentials. Any activity under your account is your responsibility. Please notify us immediately of any
-            unauthorized use.</div>
-          <br>
-          <div class="popUpModal-body">Prohibited Activities</div>
-          <div class="popUpModal-subbody">You agree not to: </div>
-          <br>
-          <ul class="popUpModal-list">
-            <li>Misuse, hack, or interfere with the platform</li>
-            <li>Use the service for non-educational or commercial purposes</li>
-            <li>Share false or misleading content</li>
-            <li>Collect personal data of other users without consent</li>
-          </ul>
-          <br>
-          <div class="popUpModal-body">Intellectual Property</div>
-          <div class="popUpModal-subbody">All content, including the NaviGait logo, platform design, and features, are
-            the
-            intellectual property of NaviGait and its partners. You may not reproduce or distribute without permission.
+          <div class="service-group">
+            <button class="service-btn">
+              Service Title <span class="arrow">▼</span>
+            </button>
+            <div class="service-description">
+              Service description content
+            </div>
           </div>
-          <button class="popUpModal-button" onclick="nextSlide()">Next</button>
+
         </div>
-
-        <div class="popUpModal-slide">
-          <div class="popUpModal-title">Terms of Use</div>
-          <div class="popUpModal-body">Modifications</div>
-          <div class="popUpModal-subbody">We reserve the right to modify or discontinue any part of the service without
-            notice. We may also update these terms from time to time.</div>
-          <br>
-          <div class="popUpModal-body">Limitation of Liability</div>
-          <div class="popUpModal-subbody">NaviGait is provided “as is.” We are not liable for any damages, losses, or
-            missed
-            clinical activities arising from system errors or user misuse.</div>
-          <br>
-          <div class="popUpModal-body">Contact</div>
-          <div class="popUpModal-subbody">For questions or concerns regarding these terms, contact us at: [insert
-            email/contact form]</div>
-          <button class="popUpModal-button" onclick="nextSlide()">Next</button>
-        </div>
-
-        <div class="popUpModal-slide">
-          <div class="popUpModal-title">Privacy Policy</div>
-          <div class="popUpModal-body">NaviGait respects your privacy. This policy explains what information we collect,
-            how
-            we use it, and how we protect it.</div>
-          <br>
-          <div class="popUpModal-body">Information We Collect</div>
-          <div class="popUpModal-subbody">We collect:</div>
-          <br>
-          <ul class="popUpModal-list">
-            <li>Personal identifiers: Name, email, student ID, etc.</li>
-            <li>To improve platform performance and user experience</li>
-            <li>To communicate shift alerts and clinical updates</li>
-            <li>To analyze anonymized usage data for improvements</li>
-          </ul>
-          <br>
-          <div class="popUpModal-body">Data Sharing</div>
-          <div class="popUpModal-subbody">We do not sell or rent your information. Data may be shared with:</div>
-          <br>
-          <ul class="popUpModal-list">
-            <li>Educational institutions (for scheduling)</li>
-            <li>Hospitals (for access coordination)</li>
-            <li>Service providers (for platform hosting and support)</li>
-          </ul>
-          <br>
-          <div class="popUpModal-body">Cookies and Tracking</div>
-          <div class="popUpModal-subbody">NaviGait may use cookies to enhance functionality. You can disable cookies in
-            your
-            browser settings, but some features may be limited.</div>
-          <br>
-          <div class="popUpModal-body">Data Security</div>
-          <div class="popUpModal-subbody">We use encryption and secure servers to protect your data. However, no digital
-            system is 100% secure, so we recommend practicing safe online habits.</div>
-          <div class="popUpModal-body">Your Rights</div>
-          <div class="popUpModal-subbody">You have the right to:</div>
-          <br>
-          <ul class="popUpModal-list">
-            <li>Access your data</li>
-            <li>Correct inaccuracies</li>
-            <li>Request data deletion</li>
-            <li>Withdraw consent (where applicable)</li>
-          </ul>
-          <br>
-          <div class="popUpModal-body">Changes to This Policy</div>
-          <div class="popUpModal-subbody">We may update this Privacy Policy periodically. Continued use of the platform
-            indicates acceptance of the new terms.</div>
-          <br>
-          <div class="popUpModal-body">Contact</div>
-          <div class="popUpModal-subbody">For privacy questions or requests, contact us at: [insert email/contact form]
-          </div>
-          <button class="popUpModal-button" onclick="closeModal()">I Understand</button>
-        </div>
-
-
-
-
       </div>
     </div>
   </div>
@@ -760,7 +694,7 @@
         ]
       },
       {
-        name: "Dumangas District Hospital, Dumangas, Iloilo",
+        name: "DUMANGAS DISTRICT HOSPITAL, Dumangas, Iloilo",
         description: "<b>Address:</b> Ilaya 1st, Dumangas, Iloilo <br> <b>Contact:</b> +6333 522 8211 | rtmdh@iloilo.gov.ph <br><br> Ramon D. Duremdes District Hospital is a government district hospital in Dumangas, Iloilo, offering 24-hour medical services and sustainable healthcare initiatives to communities in central Iloilo. <br><br> <b>Medical Center Chief</b>: Dr. Dennise Roy M. Pasadilla <br><br><b>Chief Nurse</b>: Anmi Flores",
         image: "Images/RamonD.jpg",
         services: [
@@ -882,7 +816,6 @@
           {
             title: "OB-Gyne Ward",
             description: `
-             <b>Delivery:</b>
              <p>Students must have rendered safe and quality nursing care to clients with gynecologic disturbances & pre-existing health problems and the pathologic changes during intrapartum and postpartum periods <br><br>Nursing procedures performed:</p>
              <ul>
                <li>Vital Signs Monitoring and Recording</li>
@@ -905,7 +838,6 @@
           {
             title: "Pediatric Ward",
             description: `
-             <b>Delivery:</b>
              <p>Students must have rendered safe and quality nursing care to newborn and children <br><br>Nursing procedures performed:</p>
              <ul>
                <li>Vital Signs Monitoring and Recording</li>
@@ -950,7 +882,7 @@
         ]
       },
       {
-        name: "WESTERN VISAYAS STATE UNIVERSITY MEDICAL CENTER, Iloilo City",
+        name: "WEST VISAYAS STATE UNIVERSITY MEDICAL CENTER, Iloilo City",
         description: "<b>Address:</b> E Lopez St, Jaro, Iloilo City, 500 <br> <b>Contact:</b> (033) 320 2431 | medcenter@wvsu.edu.ph | rtmdh@iloilo.gov.ph <br><br> WVSU-MC is a Level III government teaching and training hospital in Iloilo City, offering advanced medical care, specialized services, and clinical education affiliated with West Visayas State University. <br><br> <b>Medical Center Chief</b>: Dr. Dave Endel R. Gelito III <br><br><b>Chief Nurse</b>: Mr. Cesar Q. Tronco",
         image: "Images/WVSUMC.jpg",
         services: [
@@ -962,7 +894,6 @@
           {
             title: "Ob-Gyne Ward",
             description: `
-             <b>Delivery:</b>
              <p>Students must have rendered safe and quality nursing care to clients with gynecologic disturbances & pre-existing health problems and the pathologic changes during intrapartum and postpartum periods <br><br>Nursing procedures performed:</p>
              <ul>
                <li>Vital Signs Monitoring and Recording</li>
@@ -1085,7 +1016,6 @@
           {
             title: "Pediatrics",
             description: `
-             <b>Delivery:</b>
              <p>Students must have rendered safe and quality nursing care to newborn and children <br><br>Nursing procedures performed:</p>
              <ul>
                <li>Vital Signs Monitoring and Recording</li>
@@ -1247,7 +1177,88 @@
           { title: "Level III Clinical Laboratory" },
           { title: "Respiratory Units" }
         ]
-      }
+      },
+      {
+        name: "Federico Roman Tirador Sr. Memorial Hospital",
+        description: "<b>Address:</b> Brgy. Jibolo, Janiuay, Iloilo <br> <b>Contact:</b> +6333 531 8506 | frtmdh@iloilo.gov.ph <br><br> FRTSMDH is a public healthcare facility offering a comprehensive range of medical services, dedicated to providing accessible and quality healthcare to the local community. <br><br> <b>Medical Center Chief</b>: Dr. Jeseryl S. Villa <br><br><b>Chief Nurse</b>: Mr. Roland M. Lujan",
+        image: "Images/FRED.jpeg",
+        services: [
+          { title: "Outpatient Department (OPD)" },
+          { title: "Consultation" },
+          { title: "Laboratory Service" },
+          { title: "Pharmacy Service" },
+          {
+            title: "Delivery Room",
+            description: `
+             <b>Delivery:</b>
+             <p>Students must have rendered safe and quality nursing care to individual pregnant client and the newborn at risk/high-risk. <br><br>Nursing procedures performed:</p>
+             <ul>
+               <li>Transport client to delivery room safely</li>
+               <li>Place client in lithotomy position</li>
+               <li>Prepare instruments and equipment needed</li>
+               <li>Perform perineal care using sterile technique correctly</li>
+               <li>Assist in delivery of the baby and placenta correctly and carefully</li>
+               <li>Assist in episiorrhaphy, if needed</li>
+               <li>Administer medications as ordered (e.g. Oxytocin)</li>
+               <li>Perform perineal care and apply pad correctly</li>
+               <li>Demonstrate proper "latch-on" and teach breastfeeding technique</li>
+               <li>Transfer patient to recovery room/ward</li>
+               <li>Endorsement</li>
+              </ul>
+              <b>Immediate Newborn Cord Care:</b>
+              <ul>
+               <li>Suction the baby, if needed</li>
+               <li>Apply umbilical cord clamp properly</li>
+               <li>Cut the cord correctly</li>
+               <li>Initiate skin to skin contact</li>
+               <li>Wipe newborn and wrap warmly</li>
+               <li>Perform anthropometric measurement</li>
+               <li>Check vital signs</li>
+               <li>Administer ordered medications (e.g. Vit K, Hepa B. Terramycin Ointment)</li>
+               <li>Ensure proper identification of newborn and the mother.</li>
+               <li>Endorsement</li>
+              </ul>
+              <b>Provide health/discharge instructions on:</b>
+              <ul>
+               <li>Daily cord care and prevention of cord infection</li>
+               <li>Newborn screening, immunizations and feeding</li>
+               <li>Postpartum care</li>
+               <li>Discharge instruction to breastfeeding, bathing, medications ordered, appointment dates for post-natal and well-baby check-up.</li>
+              </ul>
+            `
+          },
+          { title: "X-Ray Service" },
+          { title: "Dental Service" },
+          { title: "Ambulance Service" },
+          { title: "Rehabilitation Service" },
+          { title: "Medical Service (In-Patient)" }
+
+        ]
+      },
+      {
+        name: "FPOP Community Health Care Birthing Center and Laboratory",
+        description: "<b>Address:</b> 2F Dulalia Blg. Rizal St. Brgy. Maria Clara, City Proper, Iloilo City <br> <b>Contact:</b> (033) 329 5033/ +6333 329 5033| fpop_iloilo@yahoo.com <br><br> A one stop shop service-oriented organization providing sexual and reproductive services to all the Filipinos, especially the poor, marginalized, socially excluded and underserved. <br><br> <b>Executive Director:</b>: Nandy A. Senoc <br><br><b>Primary Care Nurse:</b>: Christine S. Gicole",
+        image: "Images/FPOP.jpeg",
+        services: [
+          { title: "Family Planning Services" },
+          { title: "HIV Primary Care Clinic" },
+          { title: "Maternal Health" },
+          { title: "Child Health" },
+          { title: "Medical" },
+          { title: "Secondary Laboratory" },
+          { title: "Reproductive Health" },
+          { title: "TB DOTS" },
+          { title: "Konsulta Provider (Philhealth)" },
+          { title: "TransHealth (Mango Clinic)" },
+          { title: "Halfway Home (Balay Kaalwan)" },
+          { title: "Candy Lounge (Safe space for the youth)" },
+          { title: "Rajah Community Center" },
+          { title: "PrEP (pre-exposure prophylaxis)" },
+          { title: "SelfCare (HIV Self-screening Kits)" }
+
+
+        ]
+      },
     ];
 
     let map = L.map('map', {
@@ -1275,6 +1286,12 @@
     function toggleMapPopup() {
       const popup = document.getElementById("mapPopup");
       popup.classList.toggle("hidden");
+
+      if (!popup.classList.contains("hidden")) {
+        setTimeout(() => {
+          map.invalidateSize();
+        }, 200);
+      }
     }
 
     function showMap(index) {
@@ -1295,14 +1312,6 @@
           const lat = parseFloat(data[0].lat);
           const lon = parseFloat(data[0].lon);
 
-          // 👉 Show the popup
-          document.getElementById("mapPopup").classList.remove("hidden");
-
-          // 👉 Force Leaflet to adjust after the map becomes visible
-          setTimeout(() => {
-            map.invalidateSize();
-          }, 200);
-
           map.setView([lat, lon], 13);
 
           if (navigator.geolocation) {
@@ -1321,6 +1330,13 @@
                   return L.marker(waypoint.latLng).bindPopup(i === 0 ? "You are here" : hospital.name);
                 }
               }).addTo(map);
+
+              const mapToggleButton = document.querySelector(".map-toggle-btn");
+              mapToggleButton.classList.add("highlight");
+
+              setTimeout(() => {
+                mapToggleButton.classList.remove("highlight");
+              }, 5000); 
             }, () => {
               alert("Unable to retrieve your location.");
             }, {
@@ -1342,27 +1358,28 @@
       const hospital = hospitals[index];
       const popup = document.getElementById("infoPopup");
 
-      // Update the hospital name and description
       document.getElementById("popupHospitalName").textContent = hospital.name;
       document.getElementById("popupHospitalDesc").innerHTML = hospital.description;
 
-      // Update the hospital image dynamically
       const popupImage = document.querySelector("#infoPopup .popup-image");
-      popupImage.src = hospital.image;  // Set the image dynamically
+      popupImage.src = hospital.image;  
 
-      // Update the services list
       const servicesList = document.getElementById("servicesList");
       servicesList.innerHTML = "";
 
       let toggleIndex = 0;
 
       (hospital.services || []).forEach((service) => {
+        const serviceGroup = document.createElement("div");
+        serviceGroup.className = "service-group";
+
         const button = document.createElement("button");
         button.className = "service-btn";
+        const arrow = `<span class="arrow">▼</span>`;
 
         if (service.description && service.description.trim() !== "") {
           const currentIndex = toggleIndex;
-          button.innerHTML = `${service.title} <span class="arrow">▼</span>`;
+          button.innerHTML = `${service.title} ${arrow}`;
           button.onclick = () => toggleService(currentIndex);
 
           const desc = document.createElement("div");
@@ -1370,70 +1387,70 @@
           desc.id = `service-desc-${currentIndex}`;
           desc.innerHTML = service.description;
 
-          servicesList.appendChild(button);
-          servicesList.appendChild(desc);
+          serviceGroup.appendChild(button);
+          serviceGroup.appendChild(desc);
+          servicesList.appendChild(serviceGroup);
           toggleIndex++;
         } else {
-          button.textContent = service.title;
-          servicesList.appendChild(button);
+          button.innerHTML = `${service.title} ${arrow}`;
+
+          button.querySelector(".arrow").style.opacity = "0.5";
+          serviceGroup.appendChild(button);
+          servicesList.appendChild(serviceGroup);
         }
       });
 
-      // Show the popup
       popup.classList.remove("hidden");
+
+      void popup.offsetWidth;
+
+      popup.classList.add("popup-visible");
+    }
+
+    function closeInfoPopup() {
+      const popup = document.getElementById("infoPopup");
+
+      popup.classList.remove("popup-visible");
+
+      setTimeout(() => {
+        popup.classList.add("hidden");
+      }, 300); 
     }
 
     function toggleService(index) {
       const all = document.querySelectorAll(".service-description");
+      const allButtons = document.querySelectorAll(".service-btn");
+
       all.forEach((el, i) => {
-        el.style.display = i === index && el.style.display !== "block" ? "block" : "none";
+        if (i === index) {
+          el.classList.toggle("active");
+
+          const button = el.previousElementSibling;
+          button.classList.toggle("active"); 
+          const arrow = button.querySelector(".arrow");
+
+          if (el.classList.contains("active")) {
+            arrow.style.transform = "rotate(180deg)";
+          } else {
+            arrow.style.transform = "rotate(0deg)";
+          }
+        } else {
+          el.classList.remove("active");
+
+          const correspondingButton = all[i].previousElementSibling;
+          if (correspondingButton) {
+            correspondingButton.classList.remove("active");
+
+            const arrow = correspondingButton.querySelector(".arrow");
+            if (arrow) {
+              arrow.style.transform = "rotate(0deg)";
+            }
+          }
+        }
       });
     }
 
-    function closeInfoPopup() {
-      document.getElementById("infoPopup").classList.add("hidden");
-    }
 
-
-  </script>
-
-  <script>
-    window.addEventListener('load', () => {
-      const hasSeenPolicy = localStorage.getItem('hasSeenPolicy');
-      const modal = document.getElementById('policyPopUpModal');
-      //remove line below to never show policy again
-      //localStorage.setItem('hasSeenPolicy', 'false');
-
-      if (hasSeenPolicy === 'false' || !hasSeenPolicy) {
-        modal.style.display = 'flex';
-      } else {
-        modal.style.display = 'none';
-        //remove line below to never show policy again
-        //localStorage.setItem('hasSeenPolicy', 'false');
-      }
-    });
-
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.popUpModal-slide');
-
-    function nextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide++;
-      if (currentSlide < slides.length) {
-        slides[currentSlide].classList.add('active');
-      }
-    }
-
-    function closeModal() {
-      document.getElementById('policyPopUpModal').style.display = 'none';
-      //set to true to never show policy again
-      localStorage.setItem('hasSeenPolicy', 'true');
-      currentSlide = 0;
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === 0) slide.classList.add('active');
-      });
-    }
   </script>
 </body>
 
